@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Models first -->
+    <Compile Include="Models\Contractor.vb" />
+    <Compile Include="Models\Payment.vb" />
+    <Compile Include="Models\ApiResponse.vb" />
+    <Compile Include="Models\CtpPayload.vb" />
+    
+    <!-- Service interfaces -->
+    <Compile Include="Services\IContractorService.vb" />
+    <Compile Include="Services\IPaymentService.vb" />
+    <Compile Include="Services\ICtpService.vb" />
+    <Compile Include="Services\IEmailService.vb" />
+    
+    <!-- Service implementations -->
+    <Compile Include="Services\ContractorService.vb" />
+    <Compile Include="Services\PaymentService.vb" />
+    <Compile Include="Services\CtpService.vb" />
+    <Compile Include="Services\EmailService.vb" />
+    
+    <!-- Controllers -->
+    <Compile Include="Controllers\ContractorsController.vb" />
+    <Compile Include="Controllers\PaymentsController.vb" />
+    <Compile Include="Controllers\MockPaymentController.vb" />
+    
+    <!-- Program entry point -->
+    <Compile Include="Program.vb" />
+  </ItemGroup>
+
+</Project>

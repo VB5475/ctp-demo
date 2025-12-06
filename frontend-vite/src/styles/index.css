@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.card {
+  background: #020617;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.75);
+  border: 1px solid #1f2937;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #3b82f6, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #f1f5f9;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #22c55e);
+  color: #0b1120;
+}
+
+.btn-secondary {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.dot-pending {
+  background: #facc15;
+}
+
+.dot-success {
+  background: #22c55e;
+}
+
+.dot-failed {
+  background: #ef4444;
+}
+
+.dot-active {
+  background: #3b82f6;
+}
+
+.callback-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.callback-card {
+  text-align: center;
+  max-width: 500px;
+}
+
+.callback-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.callback-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.callback-message {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+.spinner {
+  border: 3px solid #374151;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.log-container {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #111827;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  max-height: 250px;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: #10b981;
+}
+
+.info-box {
+  background: #1e293b;
+  border-left: 4px solid #3b82f6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.success-box {
+  background: #064e3b;
+  border-left: 4px solid #22c55e;
+}
+
+.error-box {
+  background: #7f1d1d;
+  border-left: 4px solid #ef4444;
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 16px;
+  }
+  .card {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
